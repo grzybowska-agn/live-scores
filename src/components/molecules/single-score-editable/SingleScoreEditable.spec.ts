@@ -22,6 +22,7 @@ describe("SingleScoreEditable component", () => {
     it("should emit the correct value", async () => {
       const { wrapper, elements } = mountSingleScoreEditable(mockTeam);
       await elements.addButton().trigger("click");
+      console.log(wrapper.emitted());
       expect(wrapper.emitted("score-change")).toEqual([[8]]);
     });
   });

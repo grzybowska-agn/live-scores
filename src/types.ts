@@ -1,4 +1,4 @@
-type TeamName = string;
+export type TeamName = string;
 
 interface Team {
   name: TeamName;

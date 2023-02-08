@@ -9,10 +9,17 @@ describe("Game component", () => {
     const { elements } = mountGame({ game: mockGame });
     expect(elements.teams().length).toBe(2);
   });
-  it("should propagate events coming from aan element", () => {
+  it("should propagate events coming from aan element", async () => {
     const { wrapper, elements } = mountGame({ game: mockGame });
     elements.teams().at(0).vm.$emit("score-change", 6);
-    expect(wrapper.emitted("score-change")).toEqual([[6]]);
+    expect(wrapper.emitted("score-change")).toEqual([
+      [
+        {
+          score: 6,
+          location: "home",
+        },
+      ],
+    ]);
   });
   it("renders a button", () => {
     const { elements } = mountGame({ game: mockGame });
