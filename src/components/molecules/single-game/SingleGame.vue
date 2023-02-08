@@ -14,6 +14,11 @@ export default Vue.extend({
       required: true,
     },
   },
+  computed: {
+    teams() {
+      return [this.game.home, this.game.away];
+    },
+  },
   methods: {
     onScoreChange(value: number, location: TeamLocation): void {
       this.$emit("score-change", { score: value, location });
@@ -28,7 +33,7 @@ export default Vue.extend({
   <div class="game">
     <div class="game__teams">
       <single-score-editable
-        v-for="team in game.teams"
+        v-for="team in teams"
         :name="team.name"
         :location="team.location"
         :score="team.score"

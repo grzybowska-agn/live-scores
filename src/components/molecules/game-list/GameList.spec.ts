@@ -3,18 +3,20 @@ import GameList from "@/components/molecules/game-list/GameList.vue";
 import { shallowMount } from "@vue/test-utils";
 import { mockData } from "@/mocks/mock-data";
 
+const mockGames = Object.keys(mockData).map((key: string) => mockData[key]);
+
 describe("GameList component", () => {
   it("renders number of elements based on props", () => {
-    const { elements } = mountGameList({ games: mockData });
+    const { elements } = mountGameList({ games: mockGames });
     expect(elements.games().length).toBe(5);
   });
   it("should propagate game-ended event coming from an element", () => {
-    const { wrapper, elements } = mountGameList({ games: mockData });
+    const { wrapper, elements } = mountGameList({ games: mockGames });
     elements.games().at(2).vm.$emit("game-ended", 3);
     expect(wrapper.emitted("game-ended")).toEqual([[3]]);
   });
   it("should propagate score-change event coming from an element", () => {
-    const { wrapper, elements } = mountGameList({ games: mockData });
+    const { wrapper, elements } = mountGameList({ games: mockGames });
     elements
       .games()
       .at(2)

@@ -1,4 +1,5 @@
 export type TeamName = string;
+export type Timestamp = number;
 
 interface Team {
   name: TeamName;
@@ -13,5 +14,7 @@ export interface TeamPlaying extends Team {
 
 export interface Game {
   id: number;
-  teams: TeamPlaying[];
+  home: TeamPlaying;
+  away: TeamPlaying;
+  started: Timestamp;
 }

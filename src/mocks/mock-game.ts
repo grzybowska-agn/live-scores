@@ -2,16 +2,15 @@ import { Game } from "@/types";
 
 export const mockGame: Game = {
   id: 1,
-  teams: [
-    {
-      name: "Canada",
-      score: 5,
-      location: "home",
-    },
-    {
-      name: "Mexico",
-      score: 0,
-      location: "away",
-    },
-  ],
+  home: {
+    name: "Canada",
+    score: 5,
+    location: "home",
+  },
+  away: {
+    name: "Mexico",
+    score: 0,
+    location: "away",
+  },
+  started: 1675867422552,
 };
