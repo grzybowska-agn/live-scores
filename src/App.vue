@@ -1,13 +1,12 @@
 <template>
-  <div id="app">
-  </div>
+  <div id="app"></div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'App',
-  components: {}
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>

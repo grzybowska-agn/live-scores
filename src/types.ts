@@ -1,4 +1,4 @@
-type TeamName = string
+type TeamName = string;
 
 interface Team {
   name: TeamName;
