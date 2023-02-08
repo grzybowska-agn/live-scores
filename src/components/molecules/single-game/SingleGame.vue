@@ -26,31 +26,40 @@ export default Vue.extend({
 </script>
 <template>
   <div class="game">
-    <div v-for="team in game.teams" class="game__wrapper" :key="team.location">
+    <div class="game__teams">
       <single-score-editable
+        v-for="team in game.teams"
         :name="team.name"
         :location="team.location"
         :score="team.score"
         class="game__item"
         :class="{ 'game__item--first': team.location === 'away' }"
+        :key="team.location"
         @score-change="(payload) => onScoreChange(payload, team.location)"
       />
-      <button @click="onFinishGame" data-test-id="game-button">Finish</button>
     </div>
+
+    <button @click="onFinishGame" data-test-id="game-button">Finish</button>
   </div>
 </template>
 <style lang="scss" scoped>
 $padding: 12px;
 $border: 1px solid red;
+$gap: 5px;
 
 .game {
-  &__wrapper {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+
+  &__teams {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     border: $border;
     padding: $padding;
     width: 100%;
+    gap: $gap;
 
     &__item {
       order: 2;

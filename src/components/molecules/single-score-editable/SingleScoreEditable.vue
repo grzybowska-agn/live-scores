@@ -32,27 +32,37 @@ export default Vue.extend({
 <template>
   <div class="single-score-editable">
     <single-score :name="name" :location="location" :score="score" />
-    <button
-      @click="() => onClick(score + 1)"
-      data-test-id="single-score-editable-button-add"
-    >
-      +
-    </button>
-    <button
-      @click="() => onClick(score - 1)"
-      :disabled="score === 0"
-      data-test-id="single-score-editable-button-subtract"
-    >
-      -
-    </button>
+    <div class="single-score-editable__controls">
+      <button
+        @click="() => onClick(score + 1)"
+        data-test-id="single-score-editable-button-add"
+      >
+        +
+      </button>
+      <button
+        @click="() => onClick(score - 1)"
+        :disabled="score === 0"
+        data-test-id="single-score-editable-button-subtract"
+      >
+        -
+      </button>
+    </div>
   </div>
 </template>
 <style lang="scss">
-$gap: 5px;
+$big-gap: 20px;
+$small-gap: 5px;
 
 .single-score-editable {
   display: flex;
   align-items: center;
-  gap: $gap;
+  justify-content: space-between;
+  gap: $big-gap;
+  width: 100%;
+
+  &__controls {
+    display: flex;
+    gap: $small-gap;
+  }
 }
 </style>

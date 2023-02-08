@@ -37,10 +37,14 @@ $gap: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   &__name-wrapper {
     display: flex;
     gap: $gap;
+  }
+  &__score {
+    font-weight: bold;
   }
 }
 </style>

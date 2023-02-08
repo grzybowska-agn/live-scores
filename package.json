@@ -45,13 +45,13 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
       "eslint:recommended",
-      "@vue/typescript",
-      "prettier"
+      "prettier",
+      "plugin:vue/essential",
+      "@vue/typescript"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@typescript-eslint/parser"
     },
     "rules": {},
     "overrides": [

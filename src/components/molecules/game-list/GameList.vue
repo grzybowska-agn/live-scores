@@ -43,12 +43,13 @@ export default Vue.extend({
 </template>
 <style lang="scss" scoped>
 $gap: 20px;
-$width: 300px;
+$width: 400px;
 
 .game-list {
   display: flex;
   flex-direction: column;
   gap: $gap;
   width: $width;
+  margin: 0 auto;
 }
 </style>
