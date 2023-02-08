@@ -12,8 +12,11 @@ export default Vue.extend({
   methods: {
     onClick(): void {
       this.$emit("start-game", {
-        home: this.home,
-        away: this.away,
+        home: {
+          name: this.home,
+          location: "home",
+        },
+        away: { name: this.away, location: "away" },
       });
       this.home = "";
       this.away = "";
