@@ -10,3 +10,8 @@ export interface TeamPlaying extends Team {
   location: TeamLocation;
   score: number;
 }
+
+export interface Game {
+  id: number;
+  teams: TeamPlaying[];
+}
